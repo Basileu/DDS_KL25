@@ -1,0 +1,50 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="4">
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/iofiles"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/DA1.h" FileDate="2013-11-15, 16:34:01" FileAge="1384526041537" FileType="45637" CompNumb="11" />
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2013-11-15, 18:17:31" FileAge="1384532251706" FileType="3072" />
+      <File Name="Project_Settings/Debugger/MKL25Z128.mem" FileDate="2013-11-15, 14:57:12" FileAge="1384520232547" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2013-11-15, 16:29:38" FileAge="1384525778557" FileType="45637" />
+      <File Name="Generated_Code/Bit1.h" FileDate="2013-11-15, 16:29:38" FileAge="1384525778571" FileType="45637" CompNumb="6" />
+      <File Name="Generated_Code/BitIoLdd1.h" FileDate="2013-11-15, 16:29:38" FileAge="1384525778577" FileType="45637" CompNumb="7" />
+      <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2013-11-15, 14:57:12" FileAge="1384520232549" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/DA1.c" FileDate="2013-11-15, 16:34:01" FileAge="1384526041533" FileType="45637" CompNumb="11" />
+      <File Name="Generated_Code/Bit1.c" FileDate="2013-11-15, 16:29:38" FileAge="1384525778569" FileType="45637" CompNumb="6" />
+      <File Name="Generated_Code/BitIoLdd1.c" FileDate="2013-11-15, 16:29:38" FileAge="1384525778574" FileType="45637" CompNumb="7" />
+      <File Name="Documentation/doxygen/ProcessorExpert.txt" FileDate="2013-11-15, 16:34:01" FileAge="1384526041592" FileType="45637" CompNumb="2" />
+      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2013-11-15, 16:38:50" FileAge="1384526330448" FileType="3072" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2013-11-15, 16:38:50" FileAge="1384526330410" FileType="45637" CompNumb="2" />
+      <File Name="Documentation/doxygen/pex.css" FileDate="2013-11-15, 14:57:12" FileAge="1384520232454" FileType="16384" CompNumb="2" />
+      <File Name="Sources/ProcessorExpert.c" FileDate="2013-11-15, 18:17:25" FileAge="1384532245796" FileType="128" />
+      <File Name="Documentation/ProcessorExpert.txt" FileDate="2013-11-15, 16:34:01" FileAge="1384526041644" FileType="3072" />
+      <File Name="Documentation/doxygen/DA1.txt" FileDate="2013-11-15, 16:34:01" FileAge="1384526041530" FileType="45637" CompNumb="11" />
+      <File Name="Sources/Events.h" FileDate="2013-11-15, 16:34:01" FileAge="1384526041608" FileType="131328" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2013-11-15, 16:38:50" FileAge="1384526330415" FileType="45637" CompNumb="2" />
+      <File Name="Documentation/doxygen/PIT.txt" FileDate="2013-11-15, 16:38:50" FileAge="1384526330404" FileType="45637" CompNumb="12" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.ld" FileDate="2013-11-15, 14:57:12" FileAge="1384520232540" FileType="8" CompNumb="2" />
+      <File Name="Sources/Events.c" FileDate="2013-11-15, 16:41:34" FileAge="1384526494547" FileType="131328" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2013-11-15, 16:29:38" FileAge="1384525778555" FileType="45637" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2013-11-15, 16:34:01" FileAge="1384526041603" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/PIT.h" FileDate="2013-11-15, 16:38:50" FileAge="1384526330378" FileType="45637" CompNumb="12" />
+      <File Name="Generated_Code/PE_LDD.h" FileDate="2013-11-15, 16:34:01" FileAge="1384526041600" FileType="45637" CompNumb="2" />
+      <File Name="Documentation/doxygen/RoutingReport.txt" FileDate="2013-11-15, 14:57:12" FileAge="1384520232551" FileType="45637" CompNumb="2" />
+      <File Name="Documentation/doxygen/BitIoLdd1.txt" FileDate="2013-11-15, 15:30:50" FileAge="1384522250134" FileType="45637" CompNumb="7" />
+      <File Name="Generated_Code/PIT.c" FileDate="2013-11-15, 16:38:50" FileAge="1384526330389" FileType="45637" CompNumb="12" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2013-11-15, 16:34:01" FileAge="1384526041575" FileType="45637" />
+      <File Name="Generated_Code/PE_LDD.c" FileDate="2013-11-15, 16:34:01" FileAge="1384526041596" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2013-11-15, 16:29:38" FileAge="1384525778552" FileType="45637" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>24</CodeGenReference>
+</CodeGenerationInfo>
