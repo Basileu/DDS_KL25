@@ -29,6 +29,10 @@ Sources/Events.o: ../Sources/Events.c \
  C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/DA1.h \
  C:/Freescale/CW\ MCU\ v10.5/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/DAC_PDD.h \
  C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/PIT.h \
+ C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/EInt1.h \
+ C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/ExtIntLdd1.h \
+ C:/Freescale/CW\ MCU\ v10.5/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/PORT_PDD.h \
+ C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/ExtIntLdd1.h \
  ../Sources/table.h
 
 C:/Freescale/CW\ MCU\ v10.5/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
@@ -90,5 +94,13 @@ C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/DA1.h:
 C:/Freescale/CW\ MCU\ v10.5/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/DAC_PDD.h:
 
 C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/PIT.h:
+
+C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/EInt1.h:
+
+C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/ExtIntLdd1.h:
+
+C:/Freescale/CW\ MCU\ v10.5/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/PORT_PDD.h:
+
+C:/Users/B43657/FRDM_CW_10_5/DDS_DAC_FRDM/Generated_Code/ExtIntLdd1.h:
 
 ../Sources/table.h:

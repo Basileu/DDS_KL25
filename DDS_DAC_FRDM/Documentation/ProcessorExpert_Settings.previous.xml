@@ -259,9 +259,9 @@
           </enumgroup>
           <group name="System clocks">
             <Core_clock_prescaler v="Auto select" />
-            <Core_clock v="10" />
+            <Core_clock v="20" />
             <Bus_clock_prescaler v="Auto select" />
-            <Bus_clock v="10" />
+            <Bus_clock v="20" />
             <enumgroup name="PLL/FLL clock selection" v="Auto select">
               <Clock_frequency__MHz_ v="50" />
             </enumgroup>
@@ -512,15 +512,15 @@ PE_DEBUGHALT();
       <group name="Setttings">
         <Clock_gate v="Enabled" />
         <group name="Clock settings">
-          <Base_clock_frequency v="10 MHz" />
+          <Base_clock_frequency v="20 MHz" />
         </group>
         <Freeze_in_debug_mode v="no" />
       </group>
       <group name="Channels">
         <group name="Channel 0">
           <Timer_0 v="Enabled" />
-          <Timer_0_load_value v="1024" />
-          <Timer_0_Period v="102.500 us" />
+          <Timer_0_load_value v="199" />
+          <Timer_0_Period v="10 us" />
           <group name="Interrupt">
             <Interrupt v="INT_PIT" />
             <Interrupt_request v="Enabled" />
@@ -533,7 +533,7 @@ PE_DEBUGHALT();
           <Timer_1 v="Disabled" />
           <Timer_1_chain_mode v="Disabled" />
           <Timer_1_load_value v="0" />
-          <Timer_1_Period v="0.100 us" />
+          <Timer_1_Period v="0.050 us" />
           <group name="Interrupt">
             <Interrupt v="INT_PIT" />
             <Interrupt_request v="Enabled" />
@@ -553,6 +553,69 @@ PE_DEBUGHALT();
     </Methods>
     <Events>
       <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="EInt1" type="ExtInt">
+    <Enabled v="N" />
+    <Properties>
+      <Component_name v="EInt1" />
+      <Pin v="PTA12/TPM1_CH0" />
+      <Pin_signal v="" />
+      <inhrbean type="ExtInt_LDD">
+        <Enabled v="N" />
+        <Template v="ExtInt_LDD" />
+        <Properties>
+          <Component_name v="ExtIntLdd1" />
+          <Pin v="PTA12/TPM1_CH0" />
+          <Pin_signal v="" />
+          <Generate_interrupt_on v="falling edge" />
+          <Interrupt v="INT_PORTA" />
+          <Interrupt_priority v="medium priority" />
+          <group name="Initialization">
+            <Enabled_in_init__code v="yes" />
+            <list name="Auto Initialization" v="1">
+              <Auto_initialization v="yes" />
+            </list>
+          </group>
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <Enable v="don&amp;apos;t generate code" />
+          <Disable v="don&amp;apos;t generate code" />
+          <GetVal v="generate code" />
+          <SetEdge v="don&amp;apos;t generate code" />
+          <SetOperationMode v="don&amp;apos;t generate code" />
+          <GetDriverState v="don&amp;apos;t generate code" />
+          <ConnectPin v="don&amp;apos;t generate code" />
+        </Methods>
+        <Events>
+          <Event_module_name v="Events" />
+          <event name="OnInterrupt" v="generate code">
+            <Event_procedure_name v="ExtIntLdd1_OnInterrupt" />
+          </event>
+        </Events>
+      </inhrbean>
+      <Generate_interrupt_on v="falling edge" />
+      <Interrupt v="INT_PORTA" />
+      <Interrupt_priority v="medium priority" />
+      <group name="Initialization">
+        <Enabled_in_init__code v="yes" />
+      </group>
+    </Properties>
+    <Methods>
+      <Enable v="don&amp;apos;t generate code" />
+      <Disable v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <SetEdge v="don&amp;apos;t generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="OnInterrupt" v="generate code">
+        <Event_procedure_name v="EInt1_OnInterrupt" />
+        <Priority v="same as interrupt" />
+      </event>
     </Events>
   </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>

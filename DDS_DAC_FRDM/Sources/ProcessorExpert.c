@@ -34,6 +34,8 @@
 #include "BitIoLdd1.h"
 #include "DA1.h"
 #include "PIT.h"
+#include "EInt1.h"
+#include "ExtIntLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -68,6 +70,55 @@ void delay(unsigned int cnt)
 	}
 }
 
+void calcTable(void)
+{
+	unsigned int i;
+	// 1. Calc delta
+	// Delta  = (Fout * N) / Fsampling
+	Delta = (Fout * NrSteps) / 100000;
+	
+	// 2. Calc step : S = N/D
+	step = 1000 / Delta;
+	
+	// 3. Calc table size
+	tableSize = step * Delta;
+
+	// 4. Generate table
+	  for(i=0;i<tableSize;i++)
+	  {
+		  temp1 = i*360;
+		  sinArg = (float)((float)temp1/(float)tableSize) ;
+		  rad = (float)((3.14159265358979 * sinArg) / (float)180);
+		  y = arm_sin_f32(rad);
+		  dacOut = (float)(2048 + (float)(y * (float)2048));
+		  if(dacOut > 4095)
+			  dacOut = 4095;
+		  sineTable[i] = dacOut;
+	  }	
+	  
+	  // 6. Calc new fsample
+	  newPeriod = 1/Fout;
+	  newSlotPeriod = newPeriod / step;
+	  newSlotPeriod *= 1000000; // scale to us 
+	  
+//	  if(newSlotPeriod > Tsample)
+//	  {
+//		  deltaPeriodSample = newSlotPeriod - Tsample;
+//	  }
+//	  else
+//	  {
+//		  deltaPeriodSample = Tsample - newSlotPeriod;
+//	  }
+		
+//	  deltaPeriodSample /= Tosc;
+	  loadPIT = newSlotPeriod/Tosc - 1;
+	  // 5. adjust Fsample
+	  /* PIT_LDVAL0: TSV=0xC7 */
+	  PIT_LDVAL0 = PIT_LDVAL_TSV(loadPIT);                                   
+	  /* PIT_LDVAL1: TSV=0 */
+	  PIT_LDVAL1 = PIT_LDVAL_TSV(0x00);   
+	
+}
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
@@ -84,20 +135,38 @@ int main(void)
   
   ptr = (unsigned int*) 0x4003F000;
   
-  for(i=0;i<128;i++)
+  
+//  Bit1_ClrVal();
+//  Bit1_SetVal();
+//  Bit1_ClrVal();
+  
+  for(i=0;i<NrSteps;i++)
   {
 	  temp1 = i*360;
-	  sinArg = (float)((float)temp1/(float)128) ;
+	  sinArg = (float)((float)temp1/(float)NrSteps) ;
 	  rad = (float)((3.14159265358979 * sinArg) / (float)180);
 	  y = arm_sin_f32(rad);
-	  dacOut = (float)(2048 + (float)(y * (float)2048));
+	  dacOut = (float)(2047 + (float)(y * (float)2047));
+	  if(dacOut > 4095)
+		  dacOut = 4095;
 	  sineTable[i] = dacOut;
   }
-  
+//  Bit1_SetVal();
+//  Bit1_ClrVal();
+//  Bit1_SetVal();
+//  
   PIT_Init();
-  
+  tableSize = 1000;
+  Fout = 100;
+  doCalc = 0;
+  Delta = 1;
   while(1)
   {
+	  if(doCalc == 1)
+	  {
+		  doCalc = 0;
+		  calcTable();
+	  }
 //	  Bit1_SetVal();
 //	  delay(100);
 //	  Bit1_ClrVal();

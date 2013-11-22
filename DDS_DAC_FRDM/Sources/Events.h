@@ -38,6 +38,8 @@
 #include "BitIoLdd1.h"
 #include "DA1.h"
 #include "PIT.h"
+#include "EInt1.h"
+#include "ExtIntLdd1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -58,6 +60,34 @@ extern "C" {
 /* ===================================================================*/
 void Cpu_OnNMIINT(void);
 
+
+void EInt2_OnInterrupt(void);
+/*
+** ===================================================================
+**     Event       :  EInt2_OnInterrupt (module Events)
+**
+**     Component   :  EInt2 [ExtInt]
+**     Description :
+**         This event is called when an active signal edge/level has
+**         occurred.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void EInt1_OnInterrupt(void);
+/*
+** ===================================================================
+**     Event       :  EInt1_OnInterrupt (module Events)
+**
+**     Component   :  EInt1 [ExtInt]
+**     Description :
+**         This event is called when an active signal edge/level has
+**         occurred.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
 
 /* END Events */
 

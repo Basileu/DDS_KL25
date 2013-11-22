@@ -75,8 +75,8 @@ PE_ISR(ISR_PIT)
 	
 	*p1 |=1u; // Clear PIT Timer0 ISR flag
 	
-	i++;
-	if(i>126)
+	i+=Delta;
+	if(i>tableSize-1)
 		i = 0;
 	
 	*ptr = sineTable[i];
@@ -88,6 +88,40 @@ PE_ISR(ISR_PIT)
 	  
 }
 
+
+
+/*
+** ===================================================================
+**     Event       :  EInt1_OnInterrupt (module Events)
+**
+**     Component   :  EInt1 [ExtInt]
+**     Description :
+**         This event is called when an active signal edge/level has
+**         occurred.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void EInt1_OnInterrupt(void)
+{
+	static unsigned char cnt;
+  /* Write your code here ... */
+	  /* Write your code here ... */
+			  Bit1_SetVal();
+			  delay(10);
+			  Bit1_ClrVal();
+			  delay(10);
+			  cnt++;
+			  if(cnt > 2)
+			  {
+				  doCalc = 1;
+				  cnt = 0;
+				  //Fout += 100;
+				  Fout = 19300;
+			  }
+				  
+			  
+}
 
 /* END Events */
 

@@ -31,6 +31,9 @@ Module "PIT"       (component Init_PIT_VAR0)
                 this method in user code to initialize the module. By default, the method is called by PE automatically; see 
                 "Call Init method" property of the component for more details.
 
+Module "EInt1"     (component ExtInt)
+   - EInt1_GetVal -Returns the actual value of the input pin of the component.
+
 Module "Cpu"       (component MKL25Z128LK4)
 
 ===================================================================================

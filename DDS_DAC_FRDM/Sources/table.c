@@ -5,6 +5,16 @@
  *      Author: B43657
  */
 
+unsigned int Delta;
+float Fout;
+unsigned int step;
+unsigned int tableSize;
+float newPeriod;
+float newSlotPeriod;
+float deltaPeriodSample;
+float newSlotPeriod;
+unsigned int loadPIT;
+char doCalc;
 
 
 unsigned int readyTable[256] = 
